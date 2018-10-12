@@ -1,12 +1,10 @@
 #!/bin/bash
 
-echo "Adding files"
+echo "### Adding files ###"
 git add .
 
-echo "updating file"
+echo "### updating file ####"
 git commit -m "auto-update"
 
-echo "uploading files"
+echo "### uploading files ###"
 git push origin master
-echo splimter
-echo hunterwar15
