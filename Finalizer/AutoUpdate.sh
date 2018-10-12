@@ -1,5 +1,5 @@
 #!/bin/bash
-
+git config --global credential.helper "cache --timeout=2592000"
 echo "### Adding files ###"
 git add .
 
