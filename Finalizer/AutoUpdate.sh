@@ -1,5 +1,5 @@
 #!/bin/bash
-git config --global credential.helper cache
+
 echo "### Adding files ###"
 git add .
 
