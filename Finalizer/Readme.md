@@ -15,7 +15,7 @@ Fixing repository error.<br>
 Fixing source duplication. (beta)
 
 **Version 2.1:**<br>
-Adding help option & caution notic
+Adding help option & caution notice
 
 **Version 2.0:**<br>
 Adding a menu to the shell separating System update & instaling extras.
