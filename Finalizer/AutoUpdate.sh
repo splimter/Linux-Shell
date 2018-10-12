@@ -8,3 +8,5 @@ git commit -m "auto-update"
 
 echo "uploading files"
 git push origin master
+echo splimter
+echo hunterwar15
