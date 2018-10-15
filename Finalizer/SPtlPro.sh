@@ -45,7 +45,7 @@ or via email soheybemir@gmail.com\n
 Hello="\n
 ~~~~~~~~~~~~~~~~\n
 By: Splimter\n
-Version: V3.0 (181011)\n
+Version: V3.0 (181015)\n
 ~~~~~~~~~~~~~~~~\n
 "
 
@@ -64,7 +64,7 @@ setupK(){
 if [ -f /etc/apt/splimterv1.repo ]; then
 echo "Done before" 
 else
-echo -e $repos >> /etc/apt/sources.list
+echo $repos >> /etc/apt/sources.list
 touch /etc/apt/splimterv1.repo
 fi
 

@@ -2,7 +2,7 @@
 
 This shell is used after the setup of Kali/Ubuntu Linux OS, it Update the system & setup a set of essencial software.
 
-Current Build:  181011
+Current Build:  181015
 
 **Version 3.0:**<br>
 Adding System update to kali linux.<br>
