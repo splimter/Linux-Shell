@@ -45,7 +45,7 @@ or via email soheybemir@gmail.com\n
 Hello="\n
 ~~~~~~~~~~~~~~~~\n
 By: Splimter\n
-Version: V3.0 (181015)\n
+Version: V3.0 (181019)\n
 ~~~~~~~~~~~~~~~~\n
 "
 
@@ -57,6 +57,7 @@ apt-get update
 apt-get upgrade
 sudo apt install aptitude
 sudo apt install ubuntu-restricted-extras
+sudo apt-get install preload
 }
 
 setupK(){
@@ -67,7 +68,7 @@ else
 echo $repos >> /etc/apt/sources.list
 touch /etc/apt/splimterv1.repo
 fi
-
+sudo apt-get install preload
 apt-get update
 apt-get upgrade
 
