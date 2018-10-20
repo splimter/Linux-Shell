@@ -2,7 +2,20 @@
 
 This shell is used after the setup of Kali/Ubuntu Linux OS, it Update the system & setup a set of essencial software.
 
-Current Build:  181019
+Current Build:  181020
+
+
+**Version 4.0:**<br>
+Adding offline setup package (outdate).<br>
+* tilix
+* build-essential
+* aptitude
+* flatpak
+* g++
+* vim & vim-gtk3
+* sublime text 3
+
+fix admin previlage error.<br>
 
 **Version 3.0:**<br>
 Adding System update to kali linux.<br>
