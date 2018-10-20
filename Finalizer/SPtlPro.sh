@@ -45,17 +45,21 @@ or via email soheybemir@gmail.com\n
 Hello="\n
 ~~~~~~~~~~~~~~~~\n
 By: Splimter\n
-Version: V3.0 (181019)\n
+Version: V4.0 (181020)\n
 ~~~~~~~~~~~~~~~~\n
 "
 
 echo $Hello
 
+unziping(){
+unzip shell-data.zip
+touch make.dll
+}
+
 setupU(){
 	lock
-apt-get update
-apt-get upgrade
-sudo apt install aptitude
+sudo apt-get update
+sudo apt-get upgrade
 sudo apt install ubuntu-restricted-extras
 sudo apt-get install preload
 }
@@ -68,9 +72,10 @@ else
 echo $repos >> /etc/apt/sources.list
 touch /etc/apt/splimterv1.repo
 fi
+
 sudo apt-get install preload
-apt-get update
-apt-get upgrade
+sudo apt-get update
+sudo apt-get upgrade
 
 }
 
@@ -82,6 +87,29 @@ sudo dpkg --configure -a
 
 extraU(){
 	lock
+
+if [ -f shell-data/make.dll ]; then
+echo "Done before" 
+else
+unziping
+fi
+cd shell-data
+sudo dpkg -i aptitude_0.8.10-6ubuntu1_amd64.deb
+sudo dpkg -i build-essential_12.4ubuntu1_amd64.deb
+sudo dpkg -i flatpak_0.11.3-3_amd64.deb
+sudo dpkg -i gnome-software-plugin-flatpak_3.28.1-0ubuntu4.18.04.4_amd64.deb
+sudo dpkg -i tilix_1.7.7-1ubuntu2_amd64.deb
+sudo dpkg -i g++_7.3.0-3ubuntu2_amd64.deb
+sudo dpkg -i vim_8.0.1453-1ubuntu1_amd64.deb
+sudo dpkg -i vim-gtk3_8.0.1453-1ubuntu1_amd64.deb
+tar -xvjf sublime_text_3_build_3176_x64.tar.bz2
+cd sublime_text_3
+./configure
+make
+sudo make install
+sudo apt-get -f install
+
+sudo apt install aptitude
 sudo apt install flatpak
 sudo apt install gnome-software-plugin-flatpak
 flatpak remote-add --if-not-exists flathub 
@@ -100,6 +128,25 @@ echo -e $SublimeSerial
 
 extraK(){
 	lock
+
+if [ -f shell-data/make.dll ]; then
+echo "Done before" 
+else
+unziping
+fi
+cd shell-data
+sudo dpkg -i tilix_1.7.7-1ubuntu2_amd64.deb
+sudo dpkg -i g++_7.3.0-3ubuntu2_amd64.deb
+sudo dpkg -i vim_8.0.1453-1ubuntu1_amd64.deb
+sudo dpkg -i vim-gtk3_8.0.1453-1ubuntu1_amd64.deb
+tar -xvjf sublime_text_3_build_3176_x64.tar.bz2
+cd sublime_text_3
+./configure
+make
+sudo make install
+
+sudo apt-get -f install
+
 apt-get install git
 apt-get install tilix
 apt-get install maltego metasploit-framework burpsuite wireshark aircrack-ng hydra nmap beef-xss nikto
