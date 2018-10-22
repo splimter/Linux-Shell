@@ -4,6 +4,9 @@ This shell is used after the setup of Kali/Ubuntu Linux OS, it Update the system
 
 Current Build:  181022
 
+**Version 4.2:**<br>
+Re-Shape the Shell style (By fethi).<br>
+
 **Version 4.1:**<br>
 Updating some offline setup package.<br>
 Bypass package setup if already is instaled.<br>

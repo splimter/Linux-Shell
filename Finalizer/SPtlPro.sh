@@ -28,24 +28,20 @@ F913BE58 42FEA319 F954EFDD AE881E0B\n
 ------ END LICENSE ------\n
 ~~~~~~~~~ END ~~~~~~~~~\n
 "
-help="\n
-If you have a problem while execution one of those option\n
-please fellow these steps:\n
-1-open a terminal and write:\n
-script SLog.txt\n
-2-execute the shell:\n
-./SPtlPro.sh\n
-3-do the thing that you have did\n
-4-in the end write:\n
-exit\n
-5-goto the folder and send the SLog.txt to me\n
-or via email soheybemir@gmail.com\n
+help="\n\nIf you have a problem while executing one of these options please fellow these steps:\n\n
+1- open terminal and write:\n \t\t 
+script SLog.txt\n\n
+2-execute the shell:\n\t\t./SPtlPro.sh\n\n
+3-do the thing that you have did\n\n
+4-in the end write:\n\t\texit\n\n
+5-goto the folder and send the SLog.txt to me via email\n\n \t\t ----------------------------------------\n\n
+\t\t\t--------------------------\n\t\t\t-# soheybemir@gmail.com #- \n\t\t\t--------------------------\n\n
 "
 
 Hello="\n
 ~~~~~~~~~~~~~~~~\n
 By: Splimter\n
-Version: V4.1 (181022)\n
+Version: V4.2 (181022)\n
 ~~~~~~~~~~~~~~~~\n
 "
 
@@ -193,33 +189,26 @@ sudo apt install hardinfo
 hardinfo | less
 }
 
-echo "
-Network connection is needed\n
-Please close all programme & Terminal\n 
-press 0 for help
-press 1 to finalize the Ubuntu instalation
-press 11 to finalize the Kali instalation
-press 2 to setup the Ubuntu extras
-press 22 to setup the Kali extras
-press 3 to view the systeln inforlation
-press 4 to fix the lock folders
-press ctrl+c to quit\n"
+echo "   Network connection is needed Please close all programme & Terminal\n\n \t\t -###########################- \n\n    press 0  for help.\n
+    press 1  to finalize the Ubuntu instalation.\n\n    press 2 to finalize the Kali instalation.\n\n    press 3  to setup the Ubuntu extras.
+\n    press 4 to setup the Kali extras.\n\n    press 5  to view the systeln inforlation.\n\n    press 6  to fix the lock folders.\n\n    press ctrl+c to quit.\n
+"
 
 read op
 
 if [ $op = 1 ]; then
     setupU
-   elif [ $op = 11 ]; then
-   	setupK
    elif [ $op = 2 ]; then
+   	setupK
+   elif [ $op = 3 ]; then
    	extraU
    	clr
-   elif [ $op = 22 ]; then
+   elif [ $op = 4 ]; then
    	extraK
    	clr
-   elif [ $op = 3 ]; then
+   elif [ $op = 5 ]; then
    	sysinfo
-   elif [ $op = 4 ]; then
+   elif [ $op = 6 ]; then
    	lock
    elif [ $op = 0 ]; then
    	echo $help
