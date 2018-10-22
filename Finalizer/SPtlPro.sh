@@ -45,7 +45,7 @@ or via email soheybemir@gmail.com\n
 Hello="\n
 ~~~~~~~~~~~~~~~~\n
 By: Splimter\n
-Version: V4.0 (181020)\n
+Version: V4.1 (181022)\n
 ~~~~~~~~~~~~~~~~\n
 "
 
@@ -53,6 +53,7 @@ echo $Hello
 
 unziping(){
 unzip shell-data.zip
+cd shell-data
 touch make.dll
 }
 
@@ -89,11 +90,17 @@ extraU(){
 	lock
 
 if [ -f shell-data/make.dll ]; then
-echo "Done before" 
+echo  "##### Done before ##### "
 else
 unziping
 fi
+
 cd shell-data
+
+if [ -f old.dll ]; then
+echo "##### Done before ##### " 
+else
+touch old.dll
 sudo dpkg -i aptitude_0.8.10-6ubuntu1_amd64.deb
 sudo dpkg -i build-essential_12.4ubuntu1_amd64.deb
 sudo dpkg -i flatpak_0.11.3-3_amd64.deb
@@ -108,7 +115,8 @@ cd sublime_text_3
 make
 sudo make install
 sudo apt-get -f install
-
+fi
+man sudo
 sudo apt install aptitude
 sudo apt install flatpak
 sudo apt install gnome-software-plugin-flatpak
@@ -134,7 +142,13 @@ echo "Done before"
 else
 unziping
 fi
+
 cd shell-data
+
+if [ -f old.dll ]; then
+echo "##### Done before ##### " 
+else
+touch old.dll
 sudo dpkg -i tilix_1.7.7-1ubuntu2_amd64.deb
 sudo dpkg -i g++_7.3.0-3ubuntu2_amd64.deb
 sudo dpkg -i vim_8.0.1453-1ubuntu1_amd64.deb
@@ -144,8 +158,8 @@ cd sublime_text_3
 ./configure
 make
 sudo make install
-
 sudo apt-get -f install
+fi
 
 apt-get install git
 apt-get install tilix
