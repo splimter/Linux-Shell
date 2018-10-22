@@ -2,8 +2,12 @@
 
 This shell is used after the setup of Kali/Ubuntu Linux OS, it Update the system & setup a set of essencial software.
 
-Current Build:  181020
+Current Build:  181022
 
+**Version 4.1:**<br>
+updating some offline setup package.<br>
+bypass package setup if already is instaled.<br>
+Optimizing Shell speed and performance.<br>
 
 **Version 4.0:**<br>
 Adding offline setup package (outdate).<br>
