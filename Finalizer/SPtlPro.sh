@@ -46,7 +46,7 @@ Version: V4.3 (181026)\n
 "
 
 warnning="
-            !!!!!!!!!!!!!!!!!!!!!!!!!!!!\n
+\t!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n
 This is an extrem tweak to make the startup faster.\n
 Use it at your won risk.\n
 I'am not responisble for any damage that could happen.\n
@@ -54,7 +54,7 @@ Tested on Ubuntu Mate.\n
 Just change the 90 into 10 & delete the #.\n
 #DefaultTimeoutStartSec=90s\n
 #DefaultTimeoutStopSec=90s \n
-            !!!!!!!!!!!!!!!!!!!!!!!!!!!!   \n       
+\t!!!!!!!!!!!!!!!!!!!!!!!!!!!!   \n       
           "
 
 exttweak(){
