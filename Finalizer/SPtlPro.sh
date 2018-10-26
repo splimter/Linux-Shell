@@ -41,11 +41,34 @@ script SLog.txt\n\n
 Hello="\n
 ~~~~~~~~~~~~~~~~\n
 By: Splimter\n
-Version: V4.2 (181022)\n
+Version: V4.3 (181026)\n
 ~~~~~~~~~~~~~~~~\n
 "
 
-echo $Hello
+warnning="
+            !!!!!!!!!!!!!!!!!!!!!!!!!!!!\n
+This is an extrem tweak to make the startup faster.\n
+Use it at your won risk.\n
+I'am not responisble for any damage that could happen.\n
+Tested on Ubuntu Mate.\n
+Just change the 90 into 10 & delete the #.\n
+#DefaultTimeoutStartSec=90s\n
+#DefaultTimeoutStopSec=90s \n
+            !!!!!!!!!!!!!!!!!!!!!!!!!!!!   \n       
+          "
+
+exttweak(){
+  echo $warnning
+  while true; do
+    read -p "Do you wish to performe this tweak?" yn
+    case $yn in
+        [Yy]* )  sudo cp /etc/systemd/system.conf /etc/systemd/system.conf.bak && pluma /etc/systemd/system.conf; break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+
+}
 
 unziping(){
 unzip shell-data.zip
@@ -189,12 +212,14 @@ sudo apt install hardinfo
 hardinfo | less
 }
 
+echo $Hello
+
 echo "   Network connection is needed Please close all programme & Terminal\n\n \t\t -###########################- \n\n    press 0  for help.\n
     press 1  to finalize the Ubuntu instalation.\n\n    press 2 to finalize the Kali instalation.\n\n    press 3  to setup the Ubuntu extras.
-\n    press 4 to setup the Kali extras.\n\n    press 5  to view the systeln inforlation.\n\n    press 6  to fix the lock folders.\n\n    press ctrl+c to quit.\n
+\n    press 4 to setup the Kali extras.\n\n    press 5  to view the systeln inforlation.\n\n    press 6  to fix the lock folders.\n\n    press 9 to Fast-Startup.\n\n     press ctrl+c to quit.\n
 "
 
-read op
+read -p "Chose an option: " op 
 
 if [ $op = 1 ]; then
     setupU
@@ -212,6 +237,8 @@ if [ $op = 1 ]; then
    	lock
    elif [ $op = 0 ]; then
    	echo $help
+   elif [ $op = 9 ]; then
+    exttweak
 else
     echo "Wrong input -_-"
 fi

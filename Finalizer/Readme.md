@@ -2,7 +2,10 @@
 
 This shell is used after the setup of Kali/Ubuntu Linux OS, it Update the system & setup a set of essencial software.
 
-Current Build:  181022
+Current Build:  181026
+
+**Version 4.3:**<br>
+Adding an Exterm tweak to make startup faster (experimental / beta).<br>
 
 **Version 4.2:**<br>
 Re-Shape the Shell style (By fethi).<br>
