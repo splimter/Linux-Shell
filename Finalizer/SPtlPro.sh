@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 repos="#extras repository\n
 deb http://http.kali.org/kali kali-rolling main contrib non-free\n
 deb-src http://http.kali.org/kali kali-rolling main contrib non-free\n
@@ -30,22 +30,22 @@ F913BE58 42FEA319 F954EFDD AE881E0B\n
 "
 help="\n\nIf you have a problem while executing one of these options please fellow these steps:\n\n
 1- open terminal and write:\n \t\t 
-script SLog.txt\n\n
-2-execute the shell:\n\t\t./SPtlPro.sh\n\n
-3-do the thing that you have did\n\n
-4-in the end write:\n\t\texit\n\n
-5-goto the folder and send the SLog.txt to me via email\n\n \t\t ----------------------------------------\n\n
-\t\t\t--------------------------\n\t\t\t-# soheybemir@gmail.com #- \n\t\t\t--------------------------\n\n
+script SLog.txt\n
+2-execute the shell:\n\t\t./SPtlPro.sh\n
+3-do the thing that you have did\n
+4-in the end write:\n\t\texit\n
+5-goto the folder and send the SLog.txt to me via email\n\n \t\t ----------------------------------------\n
+\t\t\t--------------------------\n\t\t\t-# soheybemir@gmail.com #- \n\t\t\t--------------------------\n
 "
 
 Hello="\n
 ~~~~~~~~~~~~~~~~\n
 By: Splimter\n
-Version: V4.3 (181026)\n
+Version: V5.0 (181101)\n
 ~~~~~~~~~~~~~~~~\n
 "
 
-warnning="
+warnning="\n
 \t!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n
 This is an extrem tweak to make the startup faster.\n
 Use it at your won risk.\n
@@ -58,9 +58,9 @@ Just change the 90 into 10 & delete the #.\n
           "
 
 exttweak(){
-  echo $warnning
+  echo -e $warnning
   while true; do
-    read -p "Do you wish to performe this tweak?" yn
+    read -p "Do you wish to performe this tweak? " yn
     case $yn in
         [Yy]* )  sudo cp /etc/systemd/system.conf /etc/systemd/system.conf.bak && pluma /etc/systemd/system.conf; break;;
         [Nn]* ) exit;;
@@ -89,7 +89,7 @@ setupK(){
 if [ -f /etc/apt/splimterv1.repo ]; then
 echo "Done before" 
 else
-echo $repos >> /etc/apt/sources.list
+echo -e $repos >> /etc/apt/sources.list
 touch /etc/apt/splimterv1.repo
 fi
 
@@ -135,7 +135,7 @@ make
 sudo make install
 sudo apt-get -f install
 fi
-man sudo
+
 sudo apt install aptitude
 sudo apt install flatpak
 sudo apt install gnome-software-plugin-flatpak
@@ -212,34 +212,58 @@ sudo apt install hardinfo
 hardinfo | less
 }
 
-echo $Hello
+echo -e $Hello
 
-echo "   Network connection is needed Please close all programme & Terminal\n\n \t\t -###########################- \n\n    press 0  for help.\n
-    press 1  to finalize the Ubuntu instalation.\n\n    press 2 to finalize the Kali instalation.\n\n    press 3  to setup the Ubuntu extras.
-\n    press 4 to setup the Kali extras.\n\n    press 5  to view the systeln inforlation.\n\n    press 6  to fix the lock folders.\n\n    press 9 to Fast-Startup.\n\n     press ctrl+c to quit.\n
+echo "   
+  Network connection is needed Please close, all programme & Terminal
+       -###########################- 
+
+    Press 0 for help.
+    Press 1 to finalize the Ubuntu instalation.
+    Press 2 to finalize the Kali instalation.
+    Press 3 to setup the Ubuntu extras.
+    Press 4 to setup the Kali extras.
+    Press 5 to view the systeln inforlation.
+    Press 6 to fix the lock folders.
+    Press 9 to Fast-Startup.
+    Press ctrl+c to quit.
 "
 
-read -p "Chose an option: " op 
+while [[ $op -eq $op ]]; do
 
-if [ $op = 1 ]; then
+  read -n1 -p "Chose an option: " op 
+
+  if [ $op = 1 ]; then
     setupU
+    break;
    elif [ $op = 2 ]; then
-   	setupK
+    setupK
+    break;
    elif [ $op = 3 ]; then
-   	extraU
-   	clr
+    extraU
+    clr
+    break;
    elif [ $op = 4 ]; then
-   	extraK
-   	clr
+    extraK
+    clr
+    break;
    elif [ $op = 5 ]; then
-   	sysinfo
+    sysinfo
+    break;
    elif [ $op = 6 ]; then
-   	lock
+    lock
+    break;
    elif [ $op = 0 ]; then
-   	echo $help
+    echo -e $help
+    break;
    elif [ $op = 9 ]; then
     exttweak
+    break;
 else
-    echo "Wrong input -_-"
+    echo -e "\nWrong input -_-"
 fi
+
+done
+
+
 
