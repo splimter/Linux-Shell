@@ -229,7 +229,7 @@ echo "
     Press ctrl+c to quit.
 "
 
-while [[ $op -eq $op ]]; do
+while true; do
 
   read -n1 -p "Chose an option: " op 
 
@@ -264,6 +264,3 @@ else
 fi
 
 done
-
-
-
