@@ -10,24 +10,6 @@ deb http://old.kali.org/kali moto main non-free contrib\n
 deb-src http://old.kali.org/kali moto main non-free contrib
 "
 
-SublimeSerial="
-\n
-~~~~~~~~~Sublime3 3176~~~~~~~~~\n
------ BEGIN LICENSE -----\n
-sgbteam \n
-Single User License\n
-EA7E-1153259\n
-8891CBB9 F1513E4F 1A3405C1 A865D53F\n
-115F202E 7B91AB2D 0D2A40ED 352B269B\n
-76E84F0B CD69BFC7 59F2DFEF E267328F\n
-215652A3 E88F9D8F 4C38E3BA 5B2DAAE4\n
-969624E7 DC9CD4D5 717FB40C 1B9738CF\n
-20B3C4F1 E917B5B3 87C38D9C ACCE7DD8\n
-5F7EF854 86B9743C FADC04AA FB0DA5C0\n
-F913BE58 42FEA319 F954EFDD AE881E0B\n
------- END LICENSE ------\n
-~~~~~~~~~ END ~~~~~~~~~\n
-"
 help="\n\nIf you have a problem while executing one of these options please fellow these steps:\n\n
 1- open terminal and write:\n \t\t 
 script SLog.txt\n
@@ -159,8 +141,6 @@ wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add
 echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
 sudo apt-get update
 sudo apt-get install sublime-text
-
-echo -e $SublimeSerial
 }
 
 extraK(){
@@ -207,8 +187,6 @@ wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add
 echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
 sudo apt-get update
 sudo apt-get install sublime-text
-
-echo -e $SublimeSerial
 }
 
 clr(){
