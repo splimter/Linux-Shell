@@ -41,7 +41,7 @@ script SLog.txt\n
 Hello="\n
 ~~~~~~~~~~~~~~~~\n
 By: Splimter\n
-Version: V5.0 (181101)\n
+Version: V5.0 (181103)\n
 ~~~~~~~~~~~~~~~~\n
 "
 
@@ -78,24 +78,34 @@ touch make.dll
 
 setupU(){
 	lock
+echo "##### Progress 0% #####"
 sudo apt-get update
-sudo apt-get upgrade
+echo "##### Progress 25% #####"
+sudo apt-get upgrade 
+echo "##### Progress 50% #####"
 sudo apt install ubuntu-restricted-extras
+echo "##### Progress 75% #####"
 sudo apt-get install preload
+echo "Done"
 }
 
 setupK(){
-	lock
+	echo "##### Progress 0 #####"
+	lock >> /dev/null
+	echo "##### Progress 20% #####"
 if [ -f /etc/apt/splimterv1.repo ]; then
 echo "Done before" 
 else
 echo -e $repos >> /etc/apt/sources.list
 touch /etc/apt/splimterv1.repo
 fi
-
+echo "##### Progress 40% #####"
 sudo apt-get install preload
+echo "##### Progress 60% #####"
 sudo apt-get update
+echo "##### Progress 80% #####"
 sudo apt-get upgrade
+echo "Done"
 
 }
 
