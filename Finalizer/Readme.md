@@ -2,10 +2,10 @@
 
 This shell is used after the setup of Kali/Ubuntu Linux OS, it Update the system & setup a set of essencial software.
 
-Current Build:  181101
+Current Build:  181103
 
 **Version 5.0:**<br>
-Embrace the BASH :).<br>
+Embrace the BASH :)<br>
 Fixing the Ugly menu with powerfull user interface.<br>
 
 **Version 4.3:**<br>
