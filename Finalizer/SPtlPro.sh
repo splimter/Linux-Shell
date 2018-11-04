@@ -73,7 +73,7 @@ echo "Done"
 
 setupK(){
 	echo "##### Progress 0 #####"
-	lock >> /dev/null
+	lock
 	echo "##### Progress 20% #####"
 if [ -f /etc/apt/splimterv1.repo ]; then
 echo "Done before" 
@@ -92,9 +92,9 @@ echo "Done"
 }
 
 lock(){
-sudo rm /var/cache/apt/archives/lock >> /dev/null/
-sudo rm /var/lib/dpkg/lock >> /dev/null/
-sudo dpkg --configure -a >> /dev/null/
+sudo rm /var/cache/apt/archives/lock >> /dev/null
+sudo rm /var/lib/dpkg/lock >> /dev/null
+sudo dpkg --configure -a >> /dev/null
 }
 
 extraU(){
