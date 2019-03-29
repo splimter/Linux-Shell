@@ -1,6 +1,6 @@
 # AEL
 
-This shell lunch directly the android emulator
+This shell lunch directly the android emulator.
 
 ### config
 
